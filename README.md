@@ -29,7 +29,7 @@ A simple application to explore and visualize Wikidata entries. This application
 1. Clone the repository:
 
 \`\`\`bash
-git clone https://github.com/yourusername/wikidata-explorer.git
+git clone https://github.com/usmankayani714/wikidata-explorer.git
 cd wikidata-explorer
 \`\`\`
 
@@ -37,7 +37,9 @@ cd wikidata-explorer
 
 \`\`\`bash
 npm install
+
 # or
+
 yarn install
 \`\`\`
 
@@ -45,7 +47,9 @@ yarn install
 
 \`\`\`bash
 npm run dev
+
 # or
+
 yarn dev
 \`\`\`
 
@@ -98,4 +102,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - [Next.js](https://nextjs.org/) for the React framework
 - [Tailwind CSS](https://tailwindcss.com/) for styling
 - [shadcn/ui](https://ui.shadcn.com/) for UI components
-\`\`\`
+  \`\`\`
