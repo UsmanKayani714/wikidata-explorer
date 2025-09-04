@@ -138,7 +138,6 @@ function processProperties(claims: Record<string, any[]>) {
 		P373: "Commons category",
 		P1566: "GeoNames ID",
 		P281: "Postal code",
-		P1082: "Population",
 		P2046: "Area",
 		P30: "Continent",
 		P6: "Head of government",

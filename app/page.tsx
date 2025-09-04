@@ -13,7 +13,7 @@ export default function WikidataExplorer() {
 	const [searchTerm, setSearchTerm] = useState("");
 	const [isSearching, setIsSearching] = useState(false);
 	const [searchResults, setSearchResults] = useState([]);
-	const [selectedEntity, setSelectedEntity] = useState(null);
+	const [selectedEntity, setSelectedEntity] = useState<any>(null);
 	const [entityDetails, setEntityDetails] = useState(null);
 	const [isLoadingDetails, setIsLoadingDetails] = useState(false);
 
@@ -46,7 +46,7 @@ export default function WikidataExplorer() {
 	}, [debouncedSearchTerm]);
 
 	// Fetch entity details when an entity is selected
-	const handleEntitySelect = async (entity) => {
+	const handleEntitySelect = async (entity: any) => {
 		setSelectedEntity(entity);
 		setIsLoadingDetails(true);
 
