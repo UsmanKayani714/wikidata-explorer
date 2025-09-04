@@ -11,9 +11,9 @@ interface EntityDetailsProps {
 	};
 	details: {
 		claims: Record<string, any[]>;
-		labels: Record<string, string>;
-		descriptions: Record<string, string>;
-		aliases: Record<string, string[]>;
+		labels: Record<string, any>;
+		descriptions: Record<string, any>;
+		aliases: Record<string, any>;
 		sitelinks: Record<string, { site: string; title: string; url: string }>;
 		properties: {
 			basic: Array<{ id: string; label: string; value: any }>;
@@ -59,8 +59,8 @@ export default function EntityDetails({ entity, details }: EntityDetailsProps) {
 
 						<TabsContent value="properties" className="space-y-4">
 							{details.properties?.basic?.length > 0 ? (
-								details.properties.basic.map((prop) => (
-									<PropertyItem key={prop.id} property={prop} />
+								details.properties.basic.map((prop, index) => (
+									<PropertyItem key={`${prop.id}-${index}`} property={prop} />
 								))
 							) : (
 								<p className="text-muted-foreground">
@@ -71,8 +71,8 @@ export default function EntityDetails({ entity, details }: EntityDetailsProps) {
 
 						<TabsContent value="identifiers" className="space-y-4">
 							{details.properties?.identifiers?.length > 0 ? (
-								details.properties.identifiers.map((prop) => (
-									<PropertyItem key={prop.id} property={prop} />
+								details.properties.identifiers.map((prop, index) => (
+									<PropertyItem key={`${prop.id}-${index}`} property={prop} />
 								))
 							) : (
 								<p className="text-muted-foreground">
@@ -180,8 +180,8 @@ export default function EntityDetails({ entity, details }: EntityDetailsProps) {
 	);
 }
 
-function PropertyItem({ property }) {
-	const renderValue = (value) => {
+function PropertyItem({ property }: { property: any }) {
+	const renderValue = (value: any) => {
 		if (typeof value === "string") {
 			// Check if it's a URL
 			if (value.startsWith("http")) {
